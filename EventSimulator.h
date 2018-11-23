@@ -13,13 +13,13 @@ using namespace std;
 class EventSimulator {
 public:
 
-    vector<Process> schedule;
-    string outputFile;
+    vector<Process> schedule; // vector to store processes
+    string outputFile; // name of the file output will be shown, taken as a command line argument
 
-    EventSimulator();
-    EventSimulator(vector<Process> _sched, string outputFile);
+    EventSimulator();//default constructor
+    EventSimulator(vector<Process> _sched, string outputFile); // constructor
 
-    void Simulate();
+    void Simulate(); // scheduler simulation performed here
 
 
 

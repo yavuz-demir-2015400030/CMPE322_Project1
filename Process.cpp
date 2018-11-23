@@ -61,10 +61,13 @@ Process& Process::operator = (const Process &other){
 
 
 bool Process::operator==(const Process &other) const {
-    return this->priority==other.priority;
+
+    return this->priority == other.priority;
+
 }
 
 bool Process::operator<(const Process &other) const {
-    return this->priority > other.priority;
+    return this->priority > other.priority || (this->priority==other.priority && this->arriveTime>other.arriveTime) ||
+            ((this->priority==other.priority && this->arriveTime==other.arriveTime && this->number > other.number));
 }
 

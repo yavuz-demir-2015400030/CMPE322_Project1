@@ -12,24 +12,23 @@ using namespace std;
 class Process {
 public:
 
-    int number;
-    string name;
-    int priority;
-    string codeFileName;
+
+    int number; //id of the process
+    string name; // name of the process
+    int priority; // priority of the process
+    string codeFileName; // code file of the proces
     CodeFile codeFile;
-    int pointer;
-    int arriveTime;
-    int turnAroundTime;
-    int waitingTime;
-    int queueEntry;
+    int pointer; // points the next instruction to execute
+    int arriveTime; // arrive time of process
+    int turnAroundTime; // total time of the process spend in the queue and execution
+    int waitingTime; // time spend in the queue
+    int queueEntry; // time when process return to the queue
 
-    Process();
-    Process(string name, int priority, string codeFileName, int time, int number);
-    Process(const Process& other);
-    Process& operator=(const Process& other);
-
-
-
+    Process();//default constructor
+    Process(string name, int priority, string codeFileName, int time, int number); // constructor
+    Process(const Process& other); //copy constructor
+    Process& operator=(const Process& other); //assignment operator
+    // bool operators for comparison
     bool operator==(const Process& other) const;
     bool operator<(const Process& other) const;
 

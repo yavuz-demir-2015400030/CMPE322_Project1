@@ -8,22 +8,23 @@
 
 CodeFile::CodeFile() {
     this->name = "";
-
 }
 
 CodeFile::CodeFile(string fileName) {
 
 
 
-    ifstream file(fileName+".txt");
+    ifstream file(fileName+".txt"); //Code file name has to exist in the same place with the source code with .txt extension
 
-    while(file.peek()!=EOF){
+    bool exit = false;
+    while(file.peek()!=EOF && !exit){ //Loop until there is no instruction left
 
-
-        string a;
-        int b;
-        file >> a >> b;
-        _instr.push_back(b);
+        //Content of code files
+        string INSTRUCTION_NAME;
+        int INSTRUCTION_EXECUTION_TIME;
+        file >> INSTRUCTION_NAME >> INSTRUCTION_EXECUTION_TIME;
+        _instr.push_back(INSTRUCTION_EXECUTION_TIME);
+        exit = "exit" == INSTRUCTION_NAME;
 
     }
 

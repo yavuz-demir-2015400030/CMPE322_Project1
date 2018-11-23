@@ -13,13 +13,11 @@ using namespace std;
 class CodeFile {
 public:
 
-    string name;
+    string name;//Name of the code file
+    vector<int> _instr; //vector for storing each instruction's execution time
 
-
-    vector<int> _instr;
-
-    CodeFile(string fileName);
-    CodeFile();
+    CodeFile(string fileName); // constructor
+    CodeFile(); // default constructor
 
 
 };
